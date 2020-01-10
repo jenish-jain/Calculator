@@ -32,7 +32,9 @@ class Keypad extends Component {
         <Button name=")" getBtnName={this.getBtnName}></Button>
         <Button name="+" getBtnName={this.getBtnName}></Button>
         <br />
+        <Button name="CLR" getBtnName={this.getBtnName}></Button>
         <Button name="=" getBtnName={this.getBtnName}></Button>
+        <Button name="DEL" getBtnName={this.getBtnName}></Button>
       </div>
     );
   }

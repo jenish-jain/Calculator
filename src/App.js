@@ -9,14 +9,24 @@ class App extends Component{
     super();
 
     this.state={
+      result:" ",
       expression: " "
     }
   }
-
-  appendExpression=(clickedBtn)=>{
+  
+  evaluate=(clickedBtn)=>{
     // console.log(this.event.target);
+    if(clickedBtn === "="){
+      this.setState({result:eval(this.state.expression)})
+    }else if((clickedBtn === "CLR")){
+      this.setState({expression:" ", result:" "});
+    }else if((clickedBtn === "DEL")){
+      this.setState({expression:this.state.expression.slice(0,-1)});
+    }
+      else{
+      this.setState({expression:this.state.expression + clickedBtn});
+    }
     // console.log(clcikedBtn);
-    this.setState({expression: this.state.expression+ clickedBtn});
   }
 
   render(){
@@ -24,9 +34,8 @@ class App extends Component{
       <div className="container">
           <h1>React calculator</h1>
         <div className="calculator-body">
-          {/* {this.state.expression} */}
-          <Display result={this.state.expression}></Display>
-          <Keypad onClick={this.appendExpression}></Keypad>
+          <Display expression={this.state.expression} result={this.state.result}></Display>
+          <Keypad onClick={this.evaluate}></Keypad>
         </div>
 
       </div>
