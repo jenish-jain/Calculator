@@ -18,9 +18,9 @@ class App extends Component{
     // console.log(this.event.target);
     if(clickedBtn === "="){
       this.setState({result:eval(this.state.expression)})
-      if(this.state.result !=" "){
-        this.setState({expression:this.state.result});
-      }
+      // if(this.state.result !=" "){
+      //   this.setState({expression:this.state.result});
+      // }
     }else if((clickedBtn === "CLR")){
       this.setState({expression:" ", result:" "});
     }else if((clickedBtn === "DEL")){
