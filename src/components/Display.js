@@ -6,8 +6,8 @@ class Display extends Component{
         let {result,expression} = this.props;
         return(
             <div className="display">
-                 <p>result = {result}</p>
-                 <p>expression ={expression}</p>
+                 <p>result => {result}</p>
+                 <p>expression =>{expression}</p>
             </div>
         );
     }
